@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+$Cyan: hsl(180, 66%, 49%);
+$Dark_Violet: hsl(257, 27%, 26%);
+
+$Red: hsl(0, 87%, 67%);
+
+$Gray: hsl(0, 0%, 75%);
+$Grayish_Violet: hsl(257, 7%, 63%);
+$Very_Dark_Blue: hsl(255, 11%, 22%);
+$Very_Dark_Violet: hsl(260, 8%, 14%);
+
+$Light_blue: rgb(239, 241, 245);
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: transparent;
+  color: $Grayish_Violet;
+  padding: 8px 15px;
+  height: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  &:hover {
+    background-color: $Cyan;
+    color: white;
+    opacity: 0.6;
+  }
+}
+
+header {
+  margin-top: 10px;
+  & .content {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    a {
+      text-decoration: none;
+      color: $Grayish_Violet;
+    }
+
+    nav {
+      display: flex;
+
+      .logo {
+        display: flex;
+        flex-direction: column;
+      }
+
+      ul {
+        margin: auto 0;
+        display: flex;
+        li {
+          list-style: none;
+          padding-right: 18px;
+          a {
+            &:hover {
+              color: $Very_Dark_Blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  padding: 20px 0;
+  margin-left: 10%;
+
+  h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: $Dark_Violet;
+    margin-bottom: 0;
+  }
+  img {
+    padding-left: 40px;
+    width: 100%;
+    height: 100%;
+    margin-right: -10%;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    color: $Grayish_Violet;
+  }
+
+  .button {
+    margin-top: 20px;
+    display: block;
+    height: fit-content;
+    background-color: $Cyan;
+    color: white;
+  }
+}
+
+.url {
+  margin-top: 30px;
+
+  .bg {
+    background-image: linear-gradient(white 50%, $Light_blue 50%);
+  }
+
+  .links {
+    margin: 0;
+    padding-top: 10px;
+    background-color: $Light_blue;
+
+    .res {
+      display: flex;
+    }
+    .content {
+      .link {
+        display: flex;
+        margin-top: 10px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+
+        span {
+          margin: auto 0;
+          color: $Very_Dark_Violet;
+          max-width: 60%;
+        }
+
+        div {
+          margin-left: auto;
+          display: flex;
+          a {
+            text-decoration: none;
+            color: $Cyan;
+          }
+
+          button {
+            height: fit-content;
+            color: white;
+            border-radius: 10px;
+            background-color: $Cyan;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+
+            &:hover {
+              opacity: 0.6;
+            }
+
+            &.copied {
+              background-color: $Dark_Violet;
+              content: 'tesr';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    border-radius: 10px;
+    background-color: $Dark_Violet;
+    box-sizing: border-box;
+    padding: 40px;
+    background-image: url("../images/bg-boost-desktop.svg");
+    background-size: cover;
+    display: flex;
+    align-items: stretch;
+
+    .button {
+      background-color: $Cyan;
+      color: white;
+      width: 140px;
+      border-radius: 10px;
+      margin-bottom: auto;
+    }
+    .input {
+      box-sizing: border-box;
+      width: 100%;
+      margin-right: 10px;
+      border: none;
+
+      span {
+        display: none;
+      }
+
+      &.error {
+        input {
+          border: 2px solid $Red;
+          color: $Red;
+        }
+
+        span {
+          color: $Red;
+          font-size: 12px;
+          display: block;
+        }
+      }
+
+      input {
+        align-content: stretch;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        padding: 8px 15px;
+        outline: none;
+      }
+    }
+  }
+}
+
+.statistics {
+  margin: 0px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: $Light_blue;
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: $Grayish_Violet;
+    text-align: center;
+    width: 55%;
+    margin: 0 auto;
+  }
+
+  .features {
+    display: flex;
+    margin-top: 50px;
+
+    :nth-of-type(2) {
+      margin-top: 40px;
+    }
+
+    :nth-of-type(3) {
+      margin-top: 80px;
+    }
+
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 10px;
+      width: 80%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $Cyan;
+      position: absolute;
+      z-index: 50;
+    }
+
+    div {
+      z-index: 100;
+      height: fit-content;
+      background-color: white;
+      margin: 10px;
+      border-radius: 10px;
+
+      h2 {
+        padding: 20px;
+        color: $Dark_Violet;
+      }
+
+      p {
+        color: $Grayish_Violet;
+        text-align: left;
+        width: auto;
+        margin: 0 auto;
+        padding: 0 20px;
+        padding-bottom: 30px;
+      }
+
+      .icon {
+        box-sizing: border-box;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        background-color: $Dark_Violet;
+        border-radius: 50%;
+        padding: 10px;
+        margin-top: -30px;
+
+        img {
+          height: 70%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+.boost {
+  margin: 0px;
+  padding: 40px;
+  background-color: $Dark_Violet;
+  background-image: url("../images/bg-boost-desktop.svg");
+  background-size: cover;
+  h1 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+  }
+
+  .button {
+    margin: 0px auto;
+    background-color: $Cyan;
+    color: white;
+    display: flex;
+  }
+}
+
+footer {
+  background-color: $Very_Dark_Violet;
+  padding: 40px 0;
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .white {
+      filter: brightness(1200%);
+    }
+
+    .map {
+      display: flex;
+      color: white;
+
+      .icons {
+        img {
+          padding: 5px;
+          cursor: pointer;
+        }
+      }
+
+      ul {
+        padding: 0;
+        margin-right: 30px;
+
+        li {
+          list-style: none;
+          padding: 5px 0;
+          margin: 0;
+
+          a {
+            padding: 0;
+            margin: 0;
+            color: $Gray;
+            text-decoration: none;
+
+            &:hover {
+              color: $Cyan;
+            }
+          }
+        }
+      }
+    }
+  }
+}

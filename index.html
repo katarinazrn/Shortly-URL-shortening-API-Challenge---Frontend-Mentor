@@ -12,6 +12,11 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -28,20 +33,24 @@
   <body>
     <header>
       <div class="content">
-        <nav>
+        <div class="menu-icon">
           <a class="logo" href="#"><img src="./images/logo.svg" /></a>
-          <ul>
+          <span id="toggle" class="material-icons"> menu </span>
+        </div>
+        <nav id="nav">
+          <ul id="menu">
             <li><a href="#">Features</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Resources</a></li>
           </ul>
+          <div id="auth">
+            <a href="#" class="button">Login</a>
+            <a href="#" class="button">Sign Up</a>
+          </div>
         </nav>
-        <div>
-          <a href="#" class="button">Login</a>
-          <a href="#" class="button">Sign Up</a>
-        </div>
       </div>
     </header>
+
     <section class="intro">
       <div>
         <h1>More than just shorter links</h1>
@@ -65,8 +74,7 @@
         </form>
       </div>
       <div class="links" id="result">
-        <div class="content" id="links">
-        </div>
+        <div class="content" id="links"></div>
       </div>
     </section>
 
@@ -169,5 +177,5 @@
       >. Coded by <a href="#">Katarina Zrnkarevic</a>.
     </div>
   </body>
-  <script src="./main.js" ></script>
+  <script src="./main.js"></script>
 </html>

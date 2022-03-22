@@ -22,7 +22,11 @@ if (links.length > 0) {
       '">' +
       l.shortLink +
       "</a>" +
-      '<button class="copy">Copy</button></div></div>';
+      '<button class="copy" onclick="handleCopy(`' +
+    l.shortLink +
+    '`)" id="copy-' +
+    l.shortLink +
+    '">Copy</button></div></div>';
     linksCon += link;
   });
   linksElement.innerHTML = linksCon;
@@ -56,13 +60,14 @@ function addLink(link, shortLink) {
 
 function handleCopy(shortLink) {
   navigator.clipboard.writeText(shortLink);
-  document.getElementById("copy-" + shortLink).classList.add("copied");
 
   let copyElements = document.getElementsByClassName("copy");
   for (let i = 0; i < copyElements.length; i++) {
     copyElements[i].innerHTML = "copy";
-    copyElements[i].classList.remove = "copied";
+    copyElements[i].classList.remove("copied");
   }
+  document.getElementById("copy-" + shortLink).classList.add("copied");
+
 
   document.getElementById("copy-" + shortLink).innerHTML = "Copied!";
 }
@@ -88,3 +93,8 @@ document.getElementById("form").addEventListener("submit", (e) => {
       addLink(link, shortLink);
     });
 });
+
+
+document.getElementById('toggle').addEventListener('click',()=>{
+    document.getElementById('nav').classList.toggle('show');
+})

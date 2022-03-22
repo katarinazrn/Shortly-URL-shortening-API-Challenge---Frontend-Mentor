@@ -28,7 +28,8 @@ body {
 .button:hover {
   background-color: #2acfcf;
   color: white;
-  opacity: 0.6;
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
 }
 
 header {
@@ -54,6 +55,7 @@ header .content nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
 }
 
 header .content nav .logo {
@@ -66,8 +68,19 @@ header .content nav .logo {
           flex-direction: column;
 }
 
+header .content nav #auth {
+  margin: auto 0;
+}
+
 header .content nav ul {
   margin: auto 0;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .content nav ul.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,7 +201,7 @@ header .content nav ul li a:hover {
 
 .url .links .content .link div button.copied {
   background-color: #3b3054;
-  content: 'tesr';
+  content: "tesr";
 }
 
 .url form {
@@ -419,5 +432,177 @@ footer .content .map ul li a {
 
 footer .content .map ul li a:hover {
   color: #2acfcf;
+}
+
+#toggle {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  header .content {
+    display: block;
+    position: relative;
+  }
+  header .content .menu-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  header .content nav {
+    position: absolute;
+  }
+  header .content nav * {
+    display: none;
+  }
+  header .content nav.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #3b3054;
+    border-radius: 10px;
+    padding: 20px 0;
+  }
+  header .content nav.show * {
+    color: white;
+  }
+  header .content nav.show ul {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: 1px solid #bfbfbf;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  header .content nav.show ul li {
+    margin: 0 auto;
+    padding: 0;
+    padding: 10px 0;
+    width: 100%;
+  }
+  header .content nav.show ul li a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  header .content nav.show #auth {
+    padding-top: 20px;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+  }
+  header .content nav.show #auth a {
+    margin: 0 auto;
+  }
+  header .content nav.show * {
+    display: inherit;
+  }
+  header .content #toggle {
+    font-size: 30px !important;
+    color: #bfbfbf;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+  .content {
+    width: 90%;
+  }
+  .intro {
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    text-align: center;
+    width: 90%;
+  }
+  .intro .button {
+    margin: 20px auto;
+  }
+  .url form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-image: url("../images/bg-boost-mobile.svg");
+    background-size: cover;
+  }
+  .url form .button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .url .link {
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .url .link span {
+    width: 100%;
+    display: block;
+    margin: 0 auto !important;
+    padding-bottom: 10px;
+    max-width: 100% !important;
+  }
+  .url .link div {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .url .link div a {
+    padding-bottom: 10px;
+  }
+  .statistics .content p {
+    width: 100%;
+  }
+  .statistics .content .features {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .statistics .content .features::after {
+    content: "";
+    height: 90%;
+    width: 10px;
+  }
+  .statistics .content .features div .icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .statistics .content .features div * {
+    text-align: center;
+  }
+  .boost {
+    background-image: url("../images/bg-boost-mobile.svg");
+  }
+  footer .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  footer .content .map {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .content .map ul {
+    margin: 0 auto;
+    padding: 15px 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
